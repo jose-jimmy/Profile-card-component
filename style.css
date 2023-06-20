@@ -2,7 +2,7 @@
 
 :root{
     --clr-primary-400: hsl(215, 51%, 70%);
-        --clr-primary-700: hsl(178, 100%, 50%);
+        --clr-primary-700: hsl(178, 86%, 51%);
         --clr-neutral-900: hsl(217, 54%, 11%);
         --clr-neutral-700: hsl(216, 50%, 16%);
         --clr-neutral-500: hsl(215, 32%, 27%);
@@ -77,10 +77,10 @@ body{
     font-family:'Kumbh Sans', sans-serif;
     background-color: var(--clr-neutral-900);
     color: var(--clr-neutral-100);
-    display: grid;
-    place-content: center;
-    margin-top: 10vh;
-    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     background-image: url(./images/bg-pattern-top.svg), url(./images/bg-pattern-bottom.svg);
     background-position: right 50vw bottom 40vh,left 50vw top 45vh;
     background-repeat: no-repeat,no-repeat;
@@ -88,14 +88,96 @@ body{
 
 .card{
     background-color: var(--clr-neutral-700);
-    display: grid;
-    border-radius: 1rem;
-    padding:25px;
+    position: relative;
+    border-radius: .8rem;
+    padding:1px;
     margin-top:5vh;
     box-shadow:0 1rem 3rem rgba(0,0,0,0.5);
+    z-index: 1;
+    width: 350px;
+    height: 375px;
 }
 
-.banner_profile{
-    height:5rem;
-    width: 5rem;
+.card::before{
+  content: "";
+    width: 100%;
+    height: 140px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("./images/bg-pattern-card.svg");
+    z-index: -1;
+    border-radius: .8rem .8rem 0rem 0rem;
+}
+
+.image-container{
+    display: flex;
+      justify-content: center;
+      margin-top: 87px;
+}
+
+.card_profile{
+  border-radius: 50%;
+  border: 5px solid white;
+}
+
+.card_info h1{
+  font-size: 18px;
+  word-break: break-all;
+  font-weight: 700;
+  text-align: center;
+  color: var(--clr-primary-700);
+  margin-top: 19px;
+  letter-spacing: .1px;
+}
+
+.card_info h1 span{
+  word-break: break-all;
+  font-size:18px;
+  font-weight: 400;
+  text-align: center;
+  color: var(--clr-neutral-100);
+}
+
+.card_info p{
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  color: var(--clr-neutral-100);
+}
+
+.card_info{
+  padding-bottom:25px;
+  border-bottom: 1px solid #d4d4d7;
+}
+
+.card_profile{
+    height:6rem;
+    width: 6rem;
+}
+
+.profile_info{
+  display: flex;
+  width: 250px;
+  justify-content: space-between;
+  margin: auto;
+  font-size: 15px;
+  margin-top: 20px;
+}
+.profile_info_box{
+  text-align: center;
+}
+
+.profile_info_number{
+  color: var(--clr-primary-700);
+    font-weight: 600;
+    margin: 0;
+    font-size: 18px;
+}
+
+.profile_info_text{
+  font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--clr-neutral-100);
 }
